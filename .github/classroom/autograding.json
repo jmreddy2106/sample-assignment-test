@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Output Verification",
+      "setup": "javac task1/Hello.java",
+      "run": "java task1.Hello",
+      "input": "",
+      "expected_output": "=== Output ===\n\nHello World...!\n",
+      "comparison": "included",
+      "timeout": 10
+    }
+  ]
+}
