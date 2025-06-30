@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Hello {
 
     public static void main(String[] args) {
-        // TO DO: Write your code below 
-        
+        // TO DO: Write your code below
+        System.out.println("Hello, World!");
     }
 }
