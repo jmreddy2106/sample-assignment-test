@@ -1,0 +1,43 @@
+# .github/workflows/classroom.yml
+name: GitHub Classroom Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    # Setup Java
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    # Compile Java files with package structure
+    - name: Compile Java files
+      run: |
+        echo "Compiling Java files..."
+        javac task1/*.java
+        echo "Compilation completed successfully"
+    
+    # Run Autograding Tests
+    - name: Autograding
+      uses: education/autograding@v1
+      continue-on-error: true
