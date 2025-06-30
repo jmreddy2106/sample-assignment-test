@@ -1,13 +1,8 @@
 package task1;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class Hello {
+public class Hello{
 
     public static void main(String[] args) {
         // TO DO: Write your code below
-        System.out.println("Hello, World!");
+        System.out.println("=== Output ===\n\nHello World...!\n");
     }
 }
